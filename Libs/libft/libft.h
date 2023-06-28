@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:36:20 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/05/22 12:33:27 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:51:22 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int		ft_printf(const char *str, ...);
 size_t	ft_strlen_gnl(char *str);
 char	*ft_strjoin_gnl(char *stash, char *buffer);
 char	*ft_strchr_gnl(char *str, int c);
+void	cleanup_str(char **str);
 char	*ft_clean_stash(char *stash);
 char	*ft_extract_line(char *stash);
 char	*ft_read_file(int fd, char *stash);

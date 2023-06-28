@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/27 16:49:32 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/06/28 11:49:20 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	check_file(char *str)
 		return (1);
 	}
 	close (fd);
-	return (0);	
+	return (0);
 }
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:30:15 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/27 17:06:56 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/06/28 11:57:47 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef	struct	s_game
 
 t_game	*init(void);
 char	**create_map(char *str);
-//void	free_map(char **map);
 void	free_array(char **map, int lines);
 int	check_square(t_game *game);
 int	check_walls(t_game *game);

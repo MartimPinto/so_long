@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:08:27 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/27 16:51:31 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:50:32 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,22 @@ char	*ft_clean_stash(char *stash)
 		return (NULL);
 	}
 	str = (char *)malloc(sizeof(char) * (ft_strlen_gnl(stash) - i + 1));
-	if (!str)	
+	if (!str)
 		return (NULL);
 	j = 0;
-	i++;
-	while (stash[i])
-		str[j++] = stash[i++];
+	while (stash[i++])
+		str[j++] = stash[i];
 	str[j] = '\0';
 	free(stash);
+	cleanup_str(&str);
 	return (str);
+}
+
+void	cleanup_str(char **str)
+{
+	if ((*str)[0] == '\0')
+	{
+		free (*str);
+		*str = 0;
+	}
 }

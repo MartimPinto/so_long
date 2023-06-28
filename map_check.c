@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:28:14 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/27 16:36:38 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/06/28 11:50:43 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	count_dimensions(t_game *game)
 	while (game->map[rows] != NULL)
 		rows++;
 	if (rows > 0)
-	{
 		cols = solong_strlen(game->map[0]);
-	}
 	game->rows = rows;
 	game->cols = cols;
 	if (cols < 5 || rows < 3)
@@ -107,9 +105,9 @@ void	check_map(char *str, t_game *game)
 		ft_printf("Error: Invalid Map!\n");
 		return ;
 	}
-	check += count_dimensions(game) + check_square(game) + count_exits(game) + check_elements(game);
-	check += check_walls(game);
-	if (check == 0) 
+	check += count_dimensions(game) + check_square(game) + count_exits(game);
+	check += check_elements(game) + check_walls(game);
+	if (check == 0)
 		check += path_check(str, game);
 	if (check != 0)
 		ft_printf("Error: Invalid Map\n");
