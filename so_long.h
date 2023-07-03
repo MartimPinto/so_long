@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:30:15 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/28 11:57:47 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/03 17:25:27 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-typedef struct s_data
+# define SIZE 64;
+
+typedef struct	s_img
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-}	t_data;
+	void	*mlx_img;
+	char	*addr;
+	int	bits_per_pixel;
+	int	line_length;
+	int	endian;
+}	t_img;
+
 
 typedef struct	s_point
 {
@@ -34,13 +40,17 @@ typedef struct	s_point
 
 typedef	struct	s_game
 {
+	void	*mlx_ptr;
+	void	*win_ptr;
 	char	**map;
 	int	rows;
 	int	cols;
 	int	colectables;
 	int	gathered;
+	int	valid;
 	t_point	player;
 	t_point	exit;
+	t_img	img;
 }	t_game;
 
 t_game	*init(void);
@@ -55,6 +65,7 @@ void	check_map(char *str, t_game *game);
 int	check_elements(t_game *game);
 int	number_lines(char *str);
 int	count_exits(t_game *game);
-
+void	render(t_game *game);
+void	free_game(t_game *game);
 
 #endif

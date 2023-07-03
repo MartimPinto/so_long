@@ -6,7 +6,7 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/06/26 17:40:58 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/03 16:23:36 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =	main.c \
 	init.c \
 	free.c \
 	utils_general.c \
+	render.c \
 
 OBJ = $(SRC:.c=.o)
 

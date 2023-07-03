@@ -6,19 +6,25 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:20:24 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/27 16:14:31 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:31:11 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_game	*init(void)
+void	init_img(t_game *game)
 {
-	t_game	*game;
+	game->img.mlx_img = NULL;
+	game->img.addr = NULL;
+	game->img.bits_per_pixel = 0;
+	game->img.line_length = 0;
+	game->img.endian = 0;
+}
 
-	game = malloc(sizeof(t_game));
-	if (!game)
-		return (NULL);
+void	init_game(t_game *game)
+{
+	game->mlx_ptr = mlx_init();
+	game->win_ptr = NULL;
 	game->map = NULL;
 	game->rows = 0;
 	game->cols = 0;
@@ -28,5 +34,17 @@ t_game	*init(void)
 	game->exit.y = 0;
 	game->exit.x = 0;
 	game->gathered = 0;
+	game->valid = 0;
+}
+
+t_game *init(void)
+{
+	t_game	*game;
+
+	game = malloc(sizeof(t_game));
+	if (!game)
+		return (NULL);
+	init_img(game);
+	init_game(game);
 	return (game);
 }

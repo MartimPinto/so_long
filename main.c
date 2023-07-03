@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/06/28 11:49:20 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/03 17:03:29 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,30 @@ static int	check_file(char *str)
 	}
 	close (fd);
 	return (0);
+
+}
+
+void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
+{
+		char	*dst;
+		dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
+		*(unsigned int*)dst = color;
+		
 }
 
 int	main(int argc, char **argv)
 {
 	t_game	*game;
-
+	
 	if (argc != 2 || check_file(argv[1]) != 0)
 		return (1);
 	game = init();
 	check_map(argv[1], game);
-	if (game->map != NULL)
+	if (!game->map || game->valid != 0)
+	{
 		free_array(game->map, game->rows);
-	free(game);
+		return (1);
+	}
+	render(game);
+	free_game(game);
 }
