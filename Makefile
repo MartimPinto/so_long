@@ -6,7 +6,7 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/07/03 16:23:36 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/04 16:13:34 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRC =	main.c \
 	free.c \
 	utils_general.c \
 	render.c \
+	move_p.c \
+	walk.c \
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,11 +6,33 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/03 17:03:29 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:05:23 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	handle_keypress(int keysym, t_game *game)
+{
+	if (keysym == XK_Escape)
+		free_game(game);
+	if (keysym == XK_Up || keysym == XK_w)
+		move_up(game);
+	if (keysym == XK_Down || keysym == XK_s)
+		move_down(game);
+	if (keysym == XK_Left || keysym == XK_a)
+		move_left(game);
+	if (keysym == XK_Right || keysym == XK_d)
+		move_right(game);
+	return (0);
+}
+
+int	handle_no_event(void *game)
+{
+	(void)game;
+	return (0);
+}
+
 
 static int	check_file(char *str)
 {
@@ -41,14 +63,6 @@ static int	check_file(char *str)
 
 }
 
-void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
-{
-		char	*dst;
-		dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-		*(unsigned int*)dst = color;
-		
-}
-
 int	main(int argc, char **argv)
 {
 	t_game	*game;
@@ -58,10 +72,7 @@ int	main(int argc, char **argv)
 	game = init();
 	check_map(argv[1], game);
 	if (!game->map || game->valid != 0)
-	{
-		free_array(game->map, game->rows);
-		return (1);
-	}
+		free_game(game);
 	render(game);
 	free_game(game);
 }

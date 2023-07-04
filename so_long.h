@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:30:15 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/03 17:25:27 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:41:22 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-# define SIZE 64;
+# define SIZE 64
 
 typedef struct	s_img
 {
@@ -48,8 +48,10 @@ typedef	struct	s_game
 	int	colectables;
 	int	gathered;
 	int	valid;
+	int	counter;
 	t_point	player;
 	t_point	exit;
+	t_point tile;
 	t_img	img;
 }	t_game;
 
@@ -66,6 +68,17 @@ int	check_elements(t_game *game);
 int	number_lines(char *str);
 int	count_exits(t_game *game);
 void	render(t_game *game);
-void	free_game(t_game *game);
+int	free_game(t_game *game);
+void	put_square(t_game *game, char *address, int x, int y);
+int	handle_keypress(int keysym, t_game *game);
+int	handle_no_event(void *game);
+void	walk_up(t_game *game);
+void	move_up (t_game *game);
+void	walk_down(t_game *game);
+void	move_down(t_game *game);
+void	walk_right(t_game *game);
+void	move_right(t_game *game);
+void	walk_left(t_game *game);
+void	move_left(t_game *game);
 
 #endif

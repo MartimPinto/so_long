@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:28:14 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/03 16:58:10 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:24:32 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int	path_check(char *str, t_game *game)
 		return (1);
 	}
 	free_array(map_cpy, game->rows);
+	game->gathered = 0;
 	return (0);
 }
 

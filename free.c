@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:54:18 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/03 17:04:21 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:59:34 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,21 @@ void	free_array(char **map, int lines)
 	free (map);
 }
 
-void	free_game(t_game *game)
+int	free_game(t_game *game)
 {
 	if (!game)
-		return ;
+		return (1);
 	if (game->map)
-		free_map(game->map);
+		free_array(game->map, game->rows);
+	if (game->img.mlx_img)
+		mlx_destroy_image(game->mlx_ptr, game->img.mlx_img);
+	if (game->win_ptr)
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	if (game->mlx_ptr)
+	{
+		mlx_destroy_display(game->mlx_ptr);
+		free(game->mlx_ptr);
+	}
 	free(game);
+	exit (0);
 }

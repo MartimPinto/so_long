@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:20:24 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/03 18:31:11 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:42:13 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_img(t_game *game)
 
 void	init_game(t_game *game)
 {
-	game->mlx_ptr = mlx_init();
+	game->mlx_ptr = NULL;
 	game->win_ptr = NULL;
 	game->map = NULL;
 	game->rows = 0;
@@ -35,6 +35,7 @@ void	init_game(t_game *game)
 	game->exit.x = 0;
 	game->gathered = 0;
 	game->valid = 0;
+	game->counter = 0;
 }
 
 t_game *init(void)
@@ -44,7 +45,10 @@ t_game *init(void)
 	game = malloc(sizeof(t_game));
 	if (!game)
 		return (NULL);
+	game->tile.x = SIZE;
+	game->tile.y = SIZE;
 	init_img(game);
 	init_game(game);
+	game->mlx_ptr = mlx_init();
 	return (game);
 }
