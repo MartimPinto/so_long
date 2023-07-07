@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:05:40 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/04/20 15:21:33 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/06 15:28:27 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		{
 			return ((void *)(s + i));
 		}
-			i++;
+		i++;
 	}
 	return (NULL);
 }
