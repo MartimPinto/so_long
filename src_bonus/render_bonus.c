@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:11:22 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 16:01:19 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:12:08 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	render_window(t_game *game)
 
 	width = game->cols * SIZE;
 	height = game->rows * SIZE;
-	game->win_ptr = mlx_new_window(game->mlx_ptr, width, height, "so_long");
+	game->win_ptr = mlx_new_window(game->mlx_ptr, width, height, 
+		"so_long_bonus");
 	if (!game->win_ptr)
 	{
 		free(game->win_ptr);
@@ -89,6 +90,7 @@ void	render(t_game *game)
 	if (!game->win_ptr)
 		return ;
 	render_map(game);
+	render_enemies(game);
 	mlx_loop_hook(game->mlx_ptr, &handle_no_event, game);
 	mlx_hook(game->win_ptr, KeyRelease, KeyReleaseMask, &handle_keypress, game);
 	mlx_hook(game->win_ptr, DestroyNotify, StructureNotifyMask, 

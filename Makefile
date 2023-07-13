@@ -6,12 +6,12 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/07/07 16:44:43 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/13 16:52:05 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 MLXFLAGS = -L ./Libs/minilibx-linux -lm -lmlx -Ilmlx -lXext -lX11
 RM = rm -f
 
@@ -40,9 +40,13 @@ SRC_BNS = src_bonus/main_bonus.c \
 	src_bonus/idle_poses_bonus.c \
 	src_bonus/collect_animations_bonus.c \
 	src_bonus/Walk_Animation_bonus.c \
+	src_bonus/enemy_init_bonus.c \
+	src_bonus/enemy_render_bonus.c \
+	src_bonus/enemy_animations.c \
+	src_bonus/enemy_move.c \
+	src_bonus/enemy_Idle.c \
 
 OBJ = $(SRC:.c=.o)
-
 OBJ_BNS = $(SRC_BNS:.c=.o)
 
 LIBFT = Libs/libft/libft.a

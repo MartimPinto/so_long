@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:40:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:46:36 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:08:58 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,39 @@ void	put_square(t_game *game, char *address, int x, int y)
 			&game->tile.x, &game->tile.y);
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, 
 		game->img.mlx_img, x, y);
+}
+
+static int	moveability(t_game *game, int x, int y)
+{
+	if (game->map[y + 1][x] == '0')
+		return (0);
+	if (game->map[y - 1][x] == '0')
+		return (0);
+	if (game->map[y][x + 1] == '0')
+		return (0);
+	if (game->map[y][x - 1] == '0')
+		return (0);
+	return (1);
+}
+
+void	enemy_pos(t_game *game, int moves)
+{
+	int	enemies;
+	int	stuck;
+
+	enemies = game->enemies;
+	while (--enemies >= 0 && moves < game->counter)
+	{
+		while (moveability(game, game->enemy_x[enemies],
+				game->enemy_y[enemies]))
+		{
+			enemies--;
+			if (enemies < 0)
+				return ;
+		}
+		stuck = game->enemy_x[enemies] + game->enemy_y[enemies];
+		move_enemy(game, enemies);
+		if (stuck == game->enemy_x[enemies] + game->enemy_y[enemies])
+			enemies++;
+	}
 }

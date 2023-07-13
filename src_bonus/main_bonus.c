@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:46:23 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:27:15 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	handle_keypress(int keysym, t_game *game)
 {
+	int	moves;
+
+	moves = game->counter;
 	if (keysym == XK_Escape)
 		free_game(game);
 	if (keysym == XK_Up || keysym == XK_w)
@@ -24,6 +27,7 @@ int	handle_keypress(int keysym, t_game *game)
 		move_left(game);
 	if (keysym == XK_Right || keysym == XK_d)
 		move_right(game);
+	enemy_pos(game, moves);
 	return (0);
 }
 
@@ -70,6 +74,8 @@ int	main(int argc, char **argv)
 	game = init();
 	check_map(argv[1], game);
 	if (!game->map || game->valid != 0)
+		free_game(game);
+	if (init_enemies(game))
 		free_game(game);
 	render(game);
 	free_game(game);

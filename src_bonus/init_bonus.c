@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:20:24 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:46:21 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/13 11:39:51 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ void	init_game(t_game *game)
 	game->gathered = 0;
 	game->valid = 0;
 	game->counter = 0;
+	game->enemies = 0;
+	game->enemy_x = NULL;
+	game->enemy_y = NULL;
 }
 
 t_game	*init(void)
 {
 	t_game	*game;
-
+	
+	srand(time(NULL));
 	game = malloc(sizeof(t_game));
 	if (!game)
 		return (NULL);

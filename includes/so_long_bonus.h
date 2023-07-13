@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:33:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/07 18:51:23 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:51:20 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
+# include <time.h>
 
 # define SIZE 64
 
@@ -49,6 +50,9 @@ typedef	struct	s_game
 	int	gathered;
 	int	valid;
 	int	counter;
+	int	enemies;
+	int	*enemy_x;
+	int	*enemy_y;
 	t_point	player;
 	t_point	exit;
 	t_point tile;
@@ -96,5 +100,16 @@ void	idle_left(t_game *game, int tile, int grass);
 void	collect_left(t_game *game);
 void	draw_walk_left(t_game *game, int tile, int grass);
 
+/*Enemies*/
+
+int	init_enemies(t_game *game);
+void	render_enemies(t_game *game);
+void	move_enemy(t_game *game, int enemies);
+void	enemy_atk_up(t_game *game, int enemies);
+void	enemy_atk_down(t_game *game, int enemies);
+void	enemy_atk_left(t_game *game, int enemies);
+void	enemy_atk_right(t_game *game, int enemies);
+void	enemy_pos(t_game *game, int moves);
+void	enemy_idle(t_game *game, int enemies);
 
 #endif
