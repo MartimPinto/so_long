@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:20:24 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 11:39:51 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 13:47:14 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	init_game(t_game *game)
 	game->valid = 0;
 	game->counter = 0;
 	game->enemies = 0;
+	game->complete = 0;
 	game->enemy_x = NULL;
 	game->enemy_y = NULL;
 }

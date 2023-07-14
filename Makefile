@@ -6,7 +6,7 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/07/13 16:52:05 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/14 14:37:29 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ SRC_BNS = src_bonus/main_bonus.c \
 	src_bonus/walk_bonus.c \
 	src_bonus/idle_poses_bonus.c \
 	src_bonus/collect_animations_bonus.c \
-	src_bonus/Walk_Animation_bonus.c \
+	src_bonus/Player_Animation_bonus.c \
 	src_bonus/enemy_init_bonus.c \
 	src_bonus/enemy_render_bonus.c \
 	src_bonus/enemy_animations.c \
 	src_bonus/enemy_move.c \
-	src_bonus/enemy_Idle.c \
+	src_bonus/bonus_animations.c
 
 OBJ = $(SRC:.c=.o)
 OBJ_BNS = $(SRC_BNS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:42:46 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 13:28:33 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:42:00 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	move_up(t_game *game)
 	t_point	p;
 
 	p = game->player;
+	if (game->map[p.y - 1][p.x] == 'G')
+		death_animation(game);
 	if (game->map[p.y - 1][p.x] == '1' || 
 		(game->map[p.y - 1][p.x] == 'E' && game->colectables != game->gathered))
 		return ;
@@ -31,6 +33,7 @@ void	move_up(t_game *game)
 	if (game->map[game->player.y][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
+		quit_animation(game);
 		ft_printf("Congratulations, you won!\n");
 		free_game(game);
 	}
@@ -41,6 +44,8 @@ void	move_down(t_game *game)
 	t_point	p;
 
 	p = game->player;
+	if (game->map[p.y + 1][p.x] == 'G')
+		death_animation(game);
 	if (game->map[p.y + 1][p.x] == '1' || 
 		(game->map[p.y + 1][p.x] == 'E' && game->colectables != game->gathered))
 		return ;
@@ -55,6 +60,7 @@ void	move_down(t_game *game)
 	if (game->map[game->player.y][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
+		quit_animation(game);
 		ft_printf("Congratulations, you won!\n");
 		free_game(game);
 	}
@@ -65,6 +71,8 @@ void	move_left(t_game *game)
 	t_point	p;
 
 	p = game->player;
+	if (game->map[p.y][p.x - 1] == 'G')
+		death_animation(game);
 	if (game->map[p.y][p.x - 1] == '1' || 
 		(game->map[p.y][p.x - 1] == 'E' && game->colectables != game->gathered))
 		return ;
@@ -79,6 +87,7 @@ void	move_left(t_game *game)
 	if (game->map[game->player.y][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
+		quit_animation(game);
 		ft_printf("Congratulations, you won!\n");
 		free_game(game);
 	}
@@ -89,6 +98,8 @@ void	move_right(t_game *game)
 	t_point	p;
 
 	p = game->player;
+	if (game->map[p.y][p.x + 1] == 'G')
+		death_animation(game);
 	if (game->map[p.y][p.x + 1] == '1' || 
 		(game->map[p.y][p.x + 1] == 'E' && game->colectables != game->gathered))
 		return ;
@@ -103,6 +114,7 @@ void	move_right(t_game *game)
 	if (game->map[game->player.y][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
+		quit_animation(game);
 		ft_printf("Congratulations, you won!\n");
 		free_game(game);
 	}

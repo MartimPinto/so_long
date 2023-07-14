@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:33:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 16:51:20 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:40:46 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef	struct	s_game
 	int	enemies;
 	int	*enemy_x;
 	int	*enemy_y;
+	int	complete;
 	t_point	player;
 	t_point	exit;
 	t_point tile;
@@ -76,6 +77,9 @@ int	free_game(t_game *game);
 void	put_square(t_game *game, char *address, int x, int y);
 int	handle_keypress(int keysym, t_game *game);
 int	handle_no_event(void *game);
+void	death_animation(t_game *game);
+void	exit_open(t_game *game);
+void	quit_animation(t_game *game);
 
 /*Movement*/
 

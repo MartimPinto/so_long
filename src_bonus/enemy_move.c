@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:03:12 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 16:58:03 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 13:02:53 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,16 @@ void	move_enemy(t_game *game, int enemies)
 	
 	x = game->enemy_x;
 	y = game->enemy_y;
-	n = rand() % 3;
+	n = rand() % 4 + 1;
 
-	if (n == 0)
-		move_enemy_up(game, x, y, enemies);
 	if (n == 1)
-		move_enemy_down(game, x, y, enemies);
+		move_enemy_up(game, x, y, enemies);
 	if (n == 2)
-		move_enemy_left(game, x, y, enemies);
+		move_enemy_down(game, x, y, enemies);
 	if (n == 3)
+		move_enemy_left(game, x, y, enemies);
+	if (n == 4)
 		move_enemy_right(game, x, y, enemies);
+	if (x[enemies] == game->player.x && y[enemies] == game->player.y)
+		death_animation(game);
 }

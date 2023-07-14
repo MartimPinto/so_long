@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:11:31 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/07 18:43:28 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 13:47:28 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,18 @@ void	collect_right(t_game *game)
 	put_square(game, "./textures/P_R_Idle.xpm", game->player.x * SIZE,
 		game->player.y * SIZE);
 	usleep(100000);
+}
+
+void	exit_open(t_game *game)
+{
+	put_square(game, "./textures/Exit_2.xpm", game->exit.x * SIZE,
+		game->exit.y * SIZE);
+	usleep(100000);
+	put_square(game, "./textures/Exit_3.xpm", game->exit.x * SIZE,
+		game->exit.y * SIZE);
+	usleep(100000);
+	put_square(game, "./textures/Exit_4.xpm", game->exit.x * SIZE,
+		game->exit.y * SIZE);
+	usleep(100000);
+	game->complete += 1;
 }

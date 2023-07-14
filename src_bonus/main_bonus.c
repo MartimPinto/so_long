@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 13:27:15 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/14 13:48:08 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	handle_keypress(int keysym, t_game *game)
 		move_left(game);
 	if (keysym == XK_Right || keysym == XK_d)
 		move_right(game);
+	if (game->colectables == game->gathered && game->complete == 0)
+		exit_open(game);
 	enemy_pos(game, moves);
 	return (0);
 }
