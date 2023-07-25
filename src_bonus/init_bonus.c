@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:20:24 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/14 13:47:14 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:23:52 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	init_game(t_game *game)
 t_game	*init(void)
 {
 	t_game	*game;
-	
+
 	srand(time(NULL));
 	game = malloc(sizeof(t_game));
 	if (!game)

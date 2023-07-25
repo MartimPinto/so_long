@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:01:20 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/07 18:51:08 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:21:37 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	walk_left(t_game *game)
 	if (game->map[game->player.y][tile] == 'C')
 		collect_left(game);
 	else
-		idle_left(game, tile, grass);	
+		idle_left(game, tile, grass);
 }
 
 void	walk_right(t_game *game)
@@ -69,5 +69,5 @@ void	walk_right(t_game *game)
 	if (game->map[game->player.y][tile] == 'C')
 		collect_right(game);
 	else
-		idle_right(game, tile, grass);	
+		idle_right(game, tile, grass);
 }

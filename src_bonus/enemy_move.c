@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:03:12 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/14 13:02:53 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:22:54 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	move_enemy_up(t_game *game, int *x, int *y, int enemies)
 		return ;
 	game->map[y[enemies]][x[enemies]] = '0';
 	enemy_atk_up(game, enemies);
-	game->map[y[enemies]][x[enemies]] = 'G';	
+	game->map[y[enemies]][x[enemies]] = 'G';
 }
 
 void	move_enemy_down(t_game *game, int *x, int *y, int enemies)
@@ -33,7 +33,7 @@ void	move_enemy_down(t_game *game, int *x, int *y, int enemies)
 		return ;
 	game->map[y[enemies]][x[enemies]] = '0';
 	enemy_atk_down(game, enemies);
-	game->map[y[enemies]][x[enemies]] = 'G';	
+	game->map[y[enemies]][x[enemies]] = 'G';
 }
 
 void	move_enemy_left(t_game *game, int *x, int *y, int enemies)
@@ -45,7 +45,7 @@ void	move_enemy_left(t_game *game, int *x, int *y, int enemies)
 		return ;
 	game->map[y[enemies]][x[enemies]] = '0';
 	enemy_atk_left(game, enemies);
-	game->map[y[enemies]][x[enemies]] = 'G';	
+	game->map[y[enemies]][x[enemies]] = 'G';
 }
 
 void	move_enemy_right(t_game *game, int *x, int *y, int enemies)
@@ -57,7 +57,7 @@ void	move_enemy_right(t_game *game, int *x, int *y, int enemies)
 		return ;
 	game->map[y[enemies]][x[enemies]] = '0';
 	enemy_atk_right(game, enemies);
-	game->map[y[enemies]][x[enemies]] = 'G';	
+	game->map[y[enemies]][x[enemies]] = 'G';
 }
 
 void	move_enemy(t_game *game, int enemies)
@@ -65,11 +65,10 @@ void	move_enemy(t_game *game, int enemies)
 	int	*x;
 	int	*y;
 	int	n;
-	
+
 	x = game->enemy_x;
 	y = game->enemy_y;
 	n = rand() % 4 + 1;
-
 	if (n == 1)
 		move_enemy_up(game, x, y, enemies);
 	if (n == 2)

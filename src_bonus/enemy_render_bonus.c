@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:01:32 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 16:54:54 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:18:09 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	render_enemies(t_game *game)
 	int	enemy_index;
 	int	x;
 	int	y;
-	
+
 	enemy_index = 0;
 	while (enemy_index < game->enemies)
 	{

@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:54:18 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:46:12 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:13:57 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int	free_game(t_game *game)
 		mlx_destroy_display(game->mlx_ptr);
 		free(game->mlx_ptr);
 	}
+	if (game->enemy_x)
+		free(game->enemy_x);
+	if (game->enemy_y)
+		free(game->enemy_y);
 	free(game);
 	exit (0);
 }

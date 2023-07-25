@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:02:50 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/13 17:14:57 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 12:20:34 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	check_calloc(t_game *game)
 {
-	if(!game->enemy_x || !game->enemy_y)
+	if (!game->enemy_x || !game->enemy_y)
 	{
-		if(game->enemy_x)
+		if (game->enemy_x)
 			free(game->enemy_x);
 		if (game->enemy_y)
 			free(game->enemy_y);
@@ -55,13 +55,12 @@ int	init_enemies(t_game *game)
 	game->enemies = enemies;
 	game->enemy_x = ft_calloc(enemies, sizeof(int));
 	game->enemy_y = ft_calloc(enemies, sizeof(int));
-	if(check_calloc(game))
+	if (check_calloc(game))
 		return (1);
 	while (--enemies >= 0)
 	{
 		y = 0;
 		x = 0;
-		
 		while (game->map[y][x] != '0')
 		{
 			y = rand() % (game->rows - 1);

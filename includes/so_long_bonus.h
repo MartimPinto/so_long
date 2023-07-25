@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:33:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/14 14:40:46 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:05:31 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef	struct	s_game
 	t_img	img;
 }	t_game;
 
+/*Map and Render*/
 t_game	*init(void);
 char	**create_map(char *str);
 void	free_array(char **map, int lines);
@@ -80,6 +81,7 @@ int	handle_no_event(void *game);
 void	death_animation(t_game *game);
 void	exit_open(t_game *game);
 void	quit_animation(t_game *game);
+void	render_moves_counter(t_game *game);
 
 /*Movement*/
 

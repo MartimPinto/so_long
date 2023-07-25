@@ -6,7 +6,7 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/07/14 14:37:29 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/24 12:06:08 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRC_BNS = src_bonus/main_bonus.c \
 	src_bonus/enemy_render_bonus.c \
 	src_bonus/enemy_animations.c \
 	src_bonus/enemy_move.c \
-	src_bonus/bonus_animations.c
+	src_bonus/bonus_animations.c \
+	src_bonus/render_counter_bonus.c \
 
 OBJ = $(SRC:.c=.o)
 OBJ_BNS = $(SRC_BNS:.c=.o)
