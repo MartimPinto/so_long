@@ -6,21 +6,11 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:54:18 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 11:31:24 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:57:03 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-void	free_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-		free(map[i++]);
-	free (map);
-}
 
 void	free_array(char **map, int lines)
 {

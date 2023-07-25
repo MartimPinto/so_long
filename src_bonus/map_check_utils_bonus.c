@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:13:43 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 14:46:29 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:09:30 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,30 @@ int	check_elements(t_game *game)
 	}
 	if (game->colectables == 0 || players != 1)
 		return (1);
+	return (0);
+}
+
+int	character_check(t_game *game)
+{
+	int	y;
+	int	x;
+	
+	y = 0;
+	x = 0;
+	while (game->map[y])
+	{
+		while (game->map[y][x] != '\n' && game->map[y][x] != '\0')
+		{
+			if (game->map[y][x] != '1' && game->map[y][x] != '0' 
+				&& game->map[y][x] != 'P' && game->map[y][x] != 'E' 
+				&& game->map[y][x] != 'C')
+			{
+				return (1);
+			}
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 	return (0);
 }

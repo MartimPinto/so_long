@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:33:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/24 12:05:31 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:55:06 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,39 @@
 
 # define SIZE 64
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*mlx_img;
 	char	*addr;
-	int	bpp;
-	int	line_length;
-	int	endian;
+	int		bpp;
+	int		line_length;
+	int		endian;
 }	t_img;
 
-
-typedef struct	s_point
+typedef struct s_point
 {
 	int	x;
 	int	y;
 }	t_point;
 
-typedef	struct	s_game
+typedef struct s_game
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
 	char	**map;
-	int	rows;
-	int	cols;
-	int	colectables;
-	int	gathered;
-	int	valid;
-	int	counter;
-	int	enemies;
-	int	*enemy_x;
-	int	*enemy_y;
-	int	complete;
+	int		rows;
+	int		cols;
+	int		colectables;
+	int		gathered;
+	int		valid;
+	int		counter;
+	int		enemies;
+	int		*enemy_x;
+	int		*enemy_y;
+	int		complete;
 	t_point	player;
 	t_point	exit;
-	t_point tile;
+	t_point	tile;
 	t_img	img;
 }	t_game;
 
@@ -64,20 +63,21 @@ typedef	struct	s_game
 t_game	*init(void);
 char	**create_map(char *str);
 void	free_array(char **map, int lines);
-int	check_square(t_game *game);
-int	check_walls(t_game *game);
-int	count_dimensions(t_game *game);
-int	solong_strlen(char *str);
+int		check_square(t_game *game);
+int		check_walls(t_game *game);
+int		count_dimensions(t_game *game);
+int		solong_strlen(char *str);
 void	fill(char **map_cpy, t_game *game, int x, int y);
 void	check_map(char *str, t_game *game);
-int	check_elements(t_game *game);
-int	number_lines(char *str);
-int	count_exits(t_game *game);
+int		check_elements(t_game *game);
+int		number_lines(char *str);
+int		count_exits(t_game *game);
+int		character_check(t_game *game);
 void	render(t_game *game);
-int	free_game(t_game *game);
+int		free_game(t_game *game);
 void	put_square(t_game *game, char *address, int x, int y);
-int	handle_keypress(int keysym, t_game *game);
-int	handle_no_event(void *game);
+int		handle_keypress(int keysym, t_game *game);
+int		handle_no_event(void *game);
 void	death_animation(t_game *game);
 void	exit_open(t_game *game);
 void	quit_animation(t_game *game);
@@ -86,7 +86,7 @@ void	render_moves_counter(t_game *game);
 /*Movement*/
 
 void	walk_up(t_game *game);
-void	move_up (t_game *game);
+void	move_up(t_game *game);
 void	idle_up(t_game *game, int tile, int grass);
 void	collect_up(t_game *game);
 void	draw_walk_up(t_game *game, int tile, int grass);
@@ -108,7 +108,7 @@ void	draw_walk_left(t_game *game, int tile, int grass);
 
 /*Enemies*/
 
-int	init_enemies(t_game *game);
+int		init_enemies(t_game *game);
 void	render_enemies(t_game *game);
 void	move_enemy(t_game *game, int enemies);
 void	enemy_atk_up(t_game *game, int enemies);

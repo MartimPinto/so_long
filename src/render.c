@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:11:22 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 12:31:25 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:33:01 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	render_elements(t_game *game, int x, int y, char c)
 	if (c == 'P')
 		put_square(game, "./textures/P_down_1.xpm", x * SIZE, y * SIZE);
 	if (c == 'E')
-		put_square(game, "./textures/Exit_2.xpm", x * SIZE, y * SIZE);
+		put_square(game, "./textures/Exit_4.xpm", x * SIZE, y * SIZE);
 	if (c == 'C')
 		put_square(game, "./textures/Collectable_1.xpm", x * SIZE, y * SIZE);
 }

@@ -6,12 +6,12 @@
 #    By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 15:57:58 by mcarneir          #+#    #+#              #
-#    Updated: 2023/07/24 12:06:08 by mcarneir         ###   ########.fr        #
+#    Updated: 2023/07/25 15:31:52 by mcarneir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -L ./Libs/minilibx-linux -lm -lmlx -Ilmlx -lXext -lX11
 RM = rm -f
 
@@ -39,13 +39,11 @@ SRC_BNS = src_bonus/main_bonus.c \
 	src_bonus/walk_bonus.c \
 	src_bonus/idle_poses_bonus.c \
 	src_bonus/collect_animations_bonus.c \
-	src_bonus/Player_Animation_bonus.c \
+	src_bonus/player_animation_bonus.c \
 	src_bonus/enemy_init_bonus.c \
-	src_bonus/enemy_render_bonus.c \
-	src_bonus/enemy_animations.c \
-	src_bonus/enemy_move.c \
-	src_bonus/bonus_animations.c \
-	src_bonus/render_counter_bonus.c \
+	src_bonus/enemy_animations_bonus.c \
+	src_bonus/enemy_move_bonus.c \
+	src_bonus/extra_animations_bonus.c \
 
 OBJ = $(SRC:.c=.o)
 OBJ_BNS = $(SRC_BNS:.c=.o)
@@ -74,5 +72,5 @@ clean:
 fclean : clean
 	@$(RM) $(LIBFT) $(NAME) $(NAME_BNS)
 
-re: fclean all bonus
+re: fclean all
 	

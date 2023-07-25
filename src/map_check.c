@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:28:14 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 11:29:11 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:03:50 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,18 @@ void	check_map(char *str, t_game *game)
 	game->map = create_map(str);
 	if (!game->map)
 	{
-		ft_printf("Error: Invalid Map!\n");
+		ft_printf("Error\n");
+		ft_printf("Invalid Map!\n");
 		return ;
 	}
 	check += count_dimensions(game) + check_square(game) + count_exits(game);
-	check += check_elements(game) + check_walls(game);
+	check += check_elements(game) + character_check(game) + check_walls(game);
 	if (check == 0)
 		check += path_check(str, game);
 	if (check != 0)
 	{
-		ft_printf("Error: Invalid Map!\n");
+		ft_printf("Error\n");
+		ft_printf("Invalid Map!\n");
 		game->valid++;
 	}
 }
