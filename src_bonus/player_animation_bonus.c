@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Player_Animation_bonus.c                           :+:      :+:    :+:   */
+/*   player_animation_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:41:22 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 12:23:25 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:17:08 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void	death_animation(t_game *game)
 	put_square(game, "./textures/Death_3.xpm", game->player.x * SIZE,
 		game->player.y * SIZE);
 	usleep(300000);
-	ft_printf("GAME OVER\n");
+	ft_printf("\033[1;31mGAME OVER\033[0m\n");
 	free_game(game);
 }

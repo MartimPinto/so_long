@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:01:20 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 11:44:27 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:23:48 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	walk_up(t_game *game)
 	if (game->map[tile][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
-		ft_printf("Congratulations, you won!\n");
+		ft_printf("\033[1;32mCongratulations, you won!\033[0m\n");
 		free_game(game);
 	}
 }
@@ -45,7 +45,7 @@ void	walk_down(t_game *game)
 	if (game->map[tile][game->player.x] == 'E' && 
 		game->colectables == game->gathered)
 	{
-		ft_printf("Congratulations, you won!\n");
+		ft_printf("\033[1;32mCongratulations, you won!\033[0m\n");
 		free_game(game);
 	}
 }
@@ -64,7 +64,7 @@ void	walk_left(t_game *game)
 	if (game->map[game->player.y][tile] == 'E' && 
 		game->colectables == game->gathered)
 	{
-		ft_printf("Congratulations, you won!\n");
+		ft_printf("\033[1;32mCongratulations, you won!\033[0m\n");
 		free_game(game);
 	}
 }
@@ -83,7 +83,7 @@ void	walk_right(t_game *game)
 	if (game->map[game->player.y][tile] == 'E' && 
 		game->colectables == game->gathered)
 	{
-		ft_printf("Congratulations, you won!\n");
+		ft_printf("\033[1;32mCongratulations, you won!\033[0m\n");
 		free_game(game);
 	}
 }

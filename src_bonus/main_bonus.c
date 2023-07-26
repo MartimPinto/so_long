@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 15:55:23 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 14:53:53 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:04:08 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ static int	check_file(char *str)
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf("Error\n");
+		ft_printf("\033[1;31mError\033[0m\n");
 		close(fd);
 		return (1);
 	}
 	str = ft_strrchr(str, '.');
 	if (!str)
 	{
-		ft_printf("Error\n");
+		ft_printf("\033[1;31mError\033[0m\n");
 		return (1);
 	}
 	if (ft_strncmp(str, ber, 4) != 0)
 	{
-		ft_printf("Error\n");
+		ft_printf("\033[1;31mError\033[0m\n");
 		return (1);
 	}
 	close (fd);

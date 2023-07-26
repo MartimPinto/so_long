@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:30:15 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 16:56:14 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:29:38 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	free_array(char **map, int lines);
 int		check_square(t_game *game);
 int		check_walls(t_game *game);
 int		count_dimensions(t_game *game);
-int	character_check(t_game *game);
+int		character_check(t_game *game);
 int		solong_strlen(char *str);
 void	fill(char **map_cpy, t_game *game, int x, int y);
 void	check_map(char *str, t_game *game);

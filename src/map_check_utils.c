@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:13:43 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 17:03:08 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:29:01 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int	character_check(t_game *game)
 {
 	int	y;
 	int	x;
-	
+
 	y = 0;
 	x = 0;
 	while (game->map[y])

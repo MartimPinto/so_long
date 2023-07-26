@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:42:46 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 15:12:33 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:25:37 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	move_up(t_game *game)
 	}
 	walk_up(game);
 	game->counter++;
-	ft_printf("Moves: %d\n", game->counter);
+	ft_printf("\033[1;32mMoves:\033[0m %d\n", game->counter);
 }
 
 void	move_down(t_game *game)
@@ -45,7 +45,7 @@ void	move_down(t_game *game)
 	}
 	walk_down(game);
 	game->counter++;
-	ft_printf("Moves: %d\n", game->counter);
+	ft_printf("\033[1;32mMoves:\033[0m %d\n", game->counter);
 }
 
 void	move_left(t_game *game)
@@ -63,7 +63,7 @@ void	move_left(t_game *game)
 	}
 	walk_left(game);
 	game->counter++;
-	ft_printf("Moves: %d\n", game->counter);
+	ft_printf("\033[1;32mMoves:\033[0m %d\n", game->counter);
 }
 
 void	move_right(t_game *game)
@@ -81,5 +81,5 @@ void	move_right(t_game *game)
 	}
 	walk_right(game);
 	game->counter++;
-	ft_printf("Moves: %d\n", game->counter);
+	ft_printf("\033[1;32mMoves:\033[0m %d\n", game->counter);
 }

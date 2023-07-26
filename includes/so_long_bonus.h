@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:33:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 16:55:06 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:34:37 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,5 @@ void	enemy_atk_down(t_game *game, int enemies);
 void	enemy_atk_left(t_game *game, int enemies);
 void	enemy_atk_right(t_game *game, int enemies);
 void	enemy_pos(t_game *game, int moves);
-void	enemy_idle(t_game *game, int enemies);
 
 #endif

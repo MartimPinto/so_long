@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:28:14 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/25 17:03:50 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:27:16 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	check_map(char *str, t_game *game)
 	game->map = create_map(str);
 	if (!game->map)
 	{
-		ft_printf("Error\n");
+		ft_printf("\033[1;31mError\033[0m\n");
 		ft_printf("Invalid Map!\n");
 		return ;
 	}
@@ -113,7 +113,7 @@ void	check_map(char *str, t_game *game)
 		check += path_check(str, game);
 	if (check != 0)
 	{
-		ft_printf("Error\n");
+		ft_printf("\033[1;31mError\033[0m\n");
 		ft_printf("Invalid Map!\n");
 		game->valid++;
 	}
