@@ -3,11 +3,12 @@
 
 </p>
 <p align="center">
+	<a href="#about">About</a> •
 	<a href="#usage">Usage</a> •
 	<a href="#norme">Norme</a>
 </p>
 
-
+## About
 Development of a small 2D game in C using the MiniLibX graphics library. In this game the player will control a character that must collect all items before being allowed to leave the stage, all while avoiding enemies and navigating through maze-like levels.
 
 This project introduces concepts such as creating and destroying windows, placing images in a window, handling keypresses, working with sprites and animations.
