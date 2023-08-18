@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:40:38 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/06 12:53:30 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:53:38 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ int	solong_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
-	{
+	while (str[i] && str[i] != '\n' && str[i])
 		i++;
-	}
 	return (i);
 }
 

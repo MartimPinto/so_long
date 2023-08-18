@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 12:13:43 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/26 11:24:17 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/08/14 10:20:16 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	fill(char **map_cpy, t_game *game, int x, int y)
 		map_cpy[y][x] = 'F';
 		game->gathered++;
 	}
+	if (map_cpy[y][x] == 'E' && game->gathered != game->colectables)
+		return ;
 	else
 		map_cpy[y][x] = 'F';
 	fill(map_cpy, game, x - 1, y);

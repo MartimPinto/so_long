@@ -6,7 +6,7 @@
 /*   By: mcarneir <mcarneir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:28:14 by mcarneir          #+#    #+#             */
-/*   Updated: 2023/07/26 11:06:58 by mcarneir         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:54:14 by mcarneir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	count_dimensions(t_game *game)
 		cols = solong_strlen(game->map[0]);
 	game->rows = rows;
 	game->cols = cols;
-	if (cols < 5 || rows < 3)
-		return (1);
 	return (0);
 }
 
